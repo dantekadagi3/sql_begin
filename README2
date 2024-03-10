@@ -1,0 +1,55 @@
+Helllloo!! here are some code snippets that i tried out for a hackerrank challenge.
+
+---
+
+# City Names Ending or Starting with Vowels 🏙️
+
+This repository contains SQL queries to filter city names from a database table based on whether they start or end with vowels.
+
+## Queries
+
+### 1. City Names Ending with Vowels 🌆
+
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE RIGHT(CITY, 1) IN ('a', 'e', 'i', 'o', 'u');
+```
+
+- This query selects distinct city names from the STATION table where the last letter of the city name is a vowel (a, e, i, o, or u).
+
+### 2. City Names Starting with Vowels 🏘️
+
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[aeiou]';
+```
+
+- This query selects distinct city names from the STATION table where the city names start with a vowel (a, e, i, o, u). 
+
+### 3. City Names Ending with Vowels 🏢
+
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '[aeiou]$';
+```
+
+- This query selects distinct city names from the STATION table where the city names end with a vowel (a, e, i, o, u).
+
+## Explanation
+
+- **SELECT DISTINCT CITY**: This part of the query selects unique city names from the STATION table.
+- **FROM STATION**: Specifies the table from which the data is being retrieved.
+- **WHERE**: Condition to filter the results based on specific criteria.
+- **REGEXP**: Operator used to match patterns in text data.
+- **RIGHT()**: Function to extract the rightmost characters of a string.
+
+---
+
+Feel free to fork this repository or use the provided queries in your own projects! If you have any questions or suggestions, please don't hesitate to reach out. 🚀
+
+--- 
+
+The last code was an addition for finding a city that ends with vowels
