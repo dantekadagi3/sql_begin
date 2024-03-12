@@ -1,0 +1,22 @@
+CREATE DATABASE  IF NOT EXISTS blood_donation;
+USE blood_donation;
+CREATE TABLE donor_info (
+    donor_id VARCHAR(3) PRIMARY KEY,
+    donor_name VARCHAR(50) NOT NULL,
+    donor_age INT NOT NULL,
+    donor_bloodtype VARCHAR(5) NOT NULL,
+    gender VARCHAR(10),
+    last_donation DATE NOT NULL
+);
+CREATE TABLE recepient_info (
+    recepient_id VARCHAR(3) PRIMARY KEY,
+    recepient_name VARCHAR(50) NOT NULL,
+    recepient_age INT NOT NULL,
+    recepient_bloodtype VARCHAR(5) NOT NULL,
+    gender VARCHAR(10),
+    next_donation DATE NOT NULL,
+    donor_id VARCHAR(3) ,
+    FOREIGN KEY (donor_id) references donor_info(donor_id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
