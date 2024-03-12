@@ -1,0 +1,64 @@
+# MySQL Joins  🤝
+
+heeeeeey.......sharing a little knowledge on joins with you all....hope you enjoy..
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Inner Join](#inner-join)
+3. [Left Join](#left-join)
+4. [Right Join](#right-join)
+5. [Outer Join](#outer-join)
+6. [Cross Join](#cross-join)
+
+## Introduction
+Joins in MySQL are used to combine rows from two or more tables based on a related column between them. They allow you to retrieve data from multiple tables in a single query, facilitating complex data retrieval and analysis.
+
+### Inner Join
+An `INNER JOIN` retrieves records that have matching values in both tables.
+
+```sql
+SELECT orders.order_id, customers.customer_name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;
+```
+
+### Left Join
+A `LEFT JOIN` retrieves all records from the left table and matching records from the right table. If there's no match, NULL values are returned for the right table columns.
+
+```sql
+SELECT customers.customer_name, orders.order_id
+FROM customers
+LEFT JOIN orders ON customers.customer_id = orders.customer_id;
+```
+
+### Right Join
+A `RIGHT JOIN` retrieves all records from the right table and matching records from the left table. If there's no match, NULL values are returned for the left table columns.
+
+```sql
+SELECT customers.customer_name, orders.order_id
+FROM customers
+RIGHT JOIN orders ON customers.customer_id = orders.customer_id;
+```
+
+### Outer Join
+An `OUTER JOIN` retrieves all records when there's a match in either left or right table. If there's no match, NULL values are returned for the unmatched side.
+
+```sql
+SELECT customers.customer_name, orders.order_id
+FROM customers
+FULL OUTER JOIN orders ON customers.customer_id = orders.customer_id;
+```
+
+### Cross Join
+A `CROSS JOIN` returns the Cartesian product of two tables, resulting in a combination of every row from the first table with every row from the second table.
+
+```sql
+SELECT customers.customer_name, orders.order_id
+FROM customers
+CROSS JOIN orders;
+```
+
+## Conclusion
+Understanding different types of joins in MySQL is essential for querying data efficiently from multiple tables. By mastering these join techniques, you can perform complex data retrieval operations and gain insights from your database effectively.
+
+Happy querying! 🚀✨
